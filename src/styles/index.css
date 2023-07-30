@@ -1,3 +1,21 @@
-/* 
-    General Styles
-*/
+
+.navbar-brand img{
+    width: 120px;
+    height: 130px;
+}
+
+.container-card{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.custom-card {
+    width: 18rem;
+  }
+  
+  .custom-img {
+    width: 100%;
+    height: auto;
+  }

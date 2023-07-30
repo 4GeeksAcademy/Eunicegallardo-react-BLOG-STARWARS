@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 import Planets from "./Planets";
 import Characters from "./Characters";
 
+
 export const Home = () => {
 	const {store, actions} = useContext(Context);
 return (

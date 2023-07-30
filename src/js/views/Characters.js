@@ -5,7 +5,7 @@ import { Context } from '../store/appContext';
 
 
 const Characters = () => {
-    const { store, actions } = useContext(Context)
+    const { store, actions } = useContext(Context);
     return (
         <div className='container-card mb-5'>
             {store.characterStarWars.map((character, index) => {
@@ -19,8 +19,8 @@ const Characters = () => {
 
                         {/* boton de learnmore */}
 
-                        <Link to="/demo" >
-                            <button type='button' className='btn btn-warning me-3'>
+                        <Link to="/info">
+                            <button type='button' className='btn btn-dark me-3'>
                                 Learn more
                             </button>
                         </Link>

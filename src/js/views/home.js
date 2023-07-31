@@ -3,6 +3,7 @@ import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import Planets from "./Planets";
 import Characters from "./Characters";
+import Vehicles from "./Vehicles";
 
 
 export const Home = () => {
@@ -13,6 +14,8 @@ return (
 		<Characters></Characters>
 		<h1 className="text-danger text-center m-2">Planets</h1>
 		<Planets></Planets>
+		<h1 className="text-danger text-center m-2">Vehicles</h1>
+		<Vehicles></Vehicles>
 	</div>
 )
 };

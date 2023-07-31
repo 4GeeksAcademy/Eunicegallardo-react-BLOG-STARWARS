@@ -1,22 +1,22 @@
-
-.navbar-brand img{
-    width: 120px;
-    height: 130px;
+.navbar-brand img {
+  width: 120px;
+  height: 130px;
 }
 
-.container-card{
-    margin: auto;
-    width: 100%;
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
+.container-card {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
 }
+
 .custom-card {
-    width: 18rem;
-    background-color: white;
-  }
-  
-  .custom-img {
-    width: 100%;
-    height: auto;
-  }
+  width: 18rem;
+  background-color: white;
+}
+
+.custom-img {
+  width: 100%;
+  height: 200px;
+}

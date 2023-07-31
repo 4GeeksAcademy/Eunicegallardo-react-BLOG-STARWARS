@@ -22,7 +22,7 @@ const Vehicles = () => {
 
                         {/* boton de learnmore */}
 
-                        <Link to={"/"} >
+                        <Link to={"/infoVehicle"} >
                             <button type='button' className='btn btn-dark me-3'>
                                 Learn more
                             </button>

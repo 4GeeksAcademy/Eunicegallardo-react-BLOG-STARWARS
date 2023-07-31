@@ -11,6 +11,8 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import starWarsBackground from "../img/star-wars-background.jpg";
 import CharacterInfo from "./component/CharacterInfo";
+import PlanetInfo from "./component/PlanetInfo";
+import VehicleInfo from "./component/VehicleInfo";
 
 //create your first component
 const Layout = () => {
@@ -25,7 +27,9 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/info" element={<CharacterInfo/>}></Route>
+						<Route path="/infoCharacter" element={<CharacterInfo/>}></Route>
+						<Route path="/infoPlanet" element={<PlanetInfo></PlanetInfo>}></Route>
+						<Route path="/infoVehicle" element={<VehicleInfo></VehicleInfo>}></Route>
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer/>

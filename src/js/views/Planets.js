@@ -15,12 +15,12 @@ const Planets = () => {
                     }} alt="img" />
                     <div className="card-body">
                         <h5 className="card-title">{planet.name}</h5>
-                        <p className="card-text">Population:{planet.population}</p>
-                        <p className="card-text"> Terrain:{planet.terrain}</p>
+                        <p className="card-text">Population:{planet.population} n/a</p>
+                        <p className="card-text"> Terrain:{planet.terrain} n/a</p>
 
                         {/* boton de learnmore */}
 
-                        <Link to={"/"} >
+                        <Link to={"/infoPlanet"} >
                             <button type='button' className='btn btn-dark me-3'>
                                 Learn more
                             </button>

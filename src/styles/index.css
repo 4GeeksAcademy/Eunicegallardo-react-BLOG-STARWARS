@@ -10,13 +10,16 @@
   overflow-x: auto;
   white-space: nowrap;
 }
+.container-img{
+  padding-bottom: 200px;
+}
 
 .custom-card {
-  width: 18rem;
-  background-color: white;
+  width: 300px;
+  background-color: #ffffff;
 }
 
 .custom-img {
   width: 100%;
-  height: 200px;
+  height: 230px;
 }

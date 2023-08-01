@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import { Context } from '../store/appContext';
-
+import { Context } from '../store/appContext'
 
 
 const Characters = () => {
@@ -13,13 +12,10 @@ const Characters = () => {
                     <img className="card-img-top custom-img" src={`https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`} alt="img" />
                     <div className="card-body">
                         <h5 className="card-title">{character.name}</h5>
-                        <p className="card-text" >Gender:{character.gender} n/a</p>
-                        <p className="card-text"> Mass:{character.mass} n/a</p>
-                        <p className="card-text"> Eye Color:{character.eye_color} n/a</p>
 
                         {/* boton de learnmore */}
 
-                        <Link to="/infoCharacter">
+                        <Link to={`/infoCharacter/${character.uid}`}>
                             <button type='button' className='btn btn-dark me-3'>
                                 Learn more
                             </button>

@@ -3,7 +3,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			characterStarWars: [],
 			planetsStarWars: [],
-			vehiclesStarWars: []
+			vehiclesStarWars: [],
+			peopleInfo: [],
+			planetInfo: [],
+			vehicleInfo: []
 		},
 		actions: {
 			getCharacters: () => {
@@ -25,7 +28,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(res => res.json())
 					.then(data => setStore({ vehiclesStarWars: data.results }))
 					.catch(err => console.error(err))
-			}
+			},
+			getPeopleById: (index) => {
+				fetch("https://www.swapi.tech/api/people/" + index)
+					.then(res => res.json())
+					.then(data => {
+						console.log(data.result);
+						setStore({ peopleInfo: data.result.properties })
+					})
+					.catch(err => console.error(err))
+			},
+			getPlanetById: (index) => {
+				fetch("https://www.swapi.tech/api/planets/" + index)
+					.then(res => res.json())
+					.then(data => {
+						console.log(data.result);
+						setStore({ planetInfo: data.result.properties })
+					})
+					.catch(err => console.error(err))
+			},
+			getVehicleById: (index) => {
+				fetch("https://www.swapi.tech/api/vehicles/" + index)
+					.then(res => res.json())
+					.then(data => {
+						console.log(data.result);
+						setStore({ vehicleInfo: data.result.properties })
+					})
+					.catch(err => console.error(err))
+			},
 
 		}
 	}

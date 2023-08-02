@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
 
 const Planets = () => {
-    const { store, actions } = useContext(Context)
+    const { store, actions } = useContext(Context);
+
+    const handleAddToFavorites = (planet) => {
+        actions.addFavorite('planet', planet);
+    };
 
     return (
         <div className='container-card mb-5'>
             {store.planetsStarWars.map((planet, index) => {
-                return <div key={index} className="custom-card m-2 border rounded">
+                return <div key={planet.url} className="custom-card m-2 border rounded">
                     <img className="card-img-top custom-img" src={`https://starwars-visualguide.com/assets/img/planets/${index + 1}.jpg`} onError={({ currentTarget }) => {
                         currentTarget.onerror = null; // prevents looping
                         currentTarget.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg";
@@ -24,7 +28,7 @@ const Planets = () => {
                             </button>
                         </Link>
 
-                        <button type='button' className='btn btn-danger'>
+                        <button type='button' className='btn btn-danger' onClick={() => handleAddToFavorites(planet)}>
                             ♡
                         </button>
                     </div>

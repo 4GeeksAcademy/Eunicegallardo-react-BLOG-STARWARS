@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import starWars from '../../img/star-wars-logo.png'
-
+import Favorites from '../component/Favorites';
 
 export const Navbar = () => {
 	return (
@@ -11,10 +11,8 @@ export const Navbar = () => {
 					<img src={starWars}/>
 				</span>
 			</Link>
-			<div className="ml-auto">
-				<Link to="/info">
-					<button className="btn btn-danger me-4">favorites</button>
-				</Link>
+			<div className="ml-auto me-4">
+			<Favorites/>
 			</div>
 		</nav>
 	);

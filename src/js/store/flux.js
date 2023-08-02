@@ -6,7 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehiclesStarWars: [],
 			peopleInfo: [],
 			planetInfo: [],
-			vehicleInfo: []
+			vehicleInfo: [],
+			favorites: []
 		},
 		actions: {
 			getCharacters: () => {
@@ -56,6 +57,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(err => console.error(err))
 			},
+			addFavorite: (type, data) => {
+				const isAlreadyFavorited = getStore().favorites.find(
+					(item) => item.type === type && item.data.url === data.url
+				);
+				if (!isAlreadyFavorited) {
+					setStore({
+						...getStore(),
+						favorites: [...getStore().favorites, { type, data }],
+					});
+				}
+			}
 
 		}
 	}

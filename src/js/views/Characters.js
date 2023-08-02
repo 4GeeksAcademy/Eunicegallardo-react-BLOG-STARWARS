@@ -5,10 +5,15 @@ import { Context } from '../store/appContext'
 
 const Characters = () => {
     const { store, actions } = useContext(Context);
+
+    const handleAddToFavorites = (character) => {
+        actions.addFavorite('character', character);
+    };
+
     return (
         <div className='container-card mb-5'>
             {store.characterStarWars.map((character, index) => {
-                return <div key={index} className="custom-card m-2 border rounded">
+                return <div key={character.url} className="custom-card m-2 border rounded">
                     <img className="card-img-top custom-img" src={`https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`} alt="img" />
                     <div className="card-body">
                         <h5 className="card-title">{character.name}</h5>
@@ -21,7 +26,7 @@ const Characters = () => {
                             </button>
                         </Link>
 
-                        <button type='button' className='btn btn-danger'>
+                        <button type='button' className='btn btn-danger' onClick={() => handleAddToFavorites(character)}>
                             ♡
                         </button>
                     </div>

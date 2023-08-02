@@ -4,13 +4,16 @@ import { Context } from '../store/appContext';
 
 
 const Vehicles = () => {
-    const { store, actions } = useContext(Context)
+    const { store, actions } = useContext(Context);
 
+    const handleAddToFavorites = (vehicle) => {
+        actions.addFavorite('vehicle', vehicle);
+    };
 
     return (
         <div className='container-card mb-5'>
             {store.vehiclesStarWars.map((vehicle, index) => {
-                return <div key={index} className="custom-card m-2 border rounded">
+                return <div key={vehicle.url} className="custom-card m-2 border rounded">
                     <img className="card-img-top custom-img" src={`https://starwars-visualguide.com/assets/img/vehicles/${index + 4}.jpg`} onError={({ currentTarget }) => {
                         currentTarget.onerror = null; // prevents looping
                         currentTarget.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg";
@@ -26,7 +29,7 @@ const Vehicles = () => {
                             </button>
                         </Link>
 
-                        <button type='button' className='btn btn-danger'>
+                        <button type='button' className='btn btn-danger' onClick={() => handleAddToFavorites(vehicle)}>
                             ♡
                         </button>
                     </div>

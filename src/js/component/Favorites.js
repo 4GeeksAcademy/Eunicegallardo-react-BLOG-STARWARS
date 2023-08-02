@@ -1,9 +1,15 @@
 import React, { useContext } from 'react';
-import { Dropdown } from 'react-bootstrap'; // Asegúrate de tener instalada la librería react-bootstrap
+import { Dropdown } from 'react-bootstrap';
 import { Context } from '../store/appContext';
+import { FaTrash } from "react-icons/fa";
 
 const Favorites = () => {
-    const { store } = useContext(Context);
+    const { store, actions } = useContext(Context);
+
+    const handleRemoveFromFavorites = (index) => {
+        actions.removeFavorite(index);
+    };
+
     return (
         <div>
             <Dropdown>
@@ -12,7 +18,9 @@ const Favorites = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     {store.favorites.map((favorite, index) => (
-                        <Dropdown.Item key={index}>{favorite.data.name}</Dropdown.Item>
+                        <Dropdown.Item key={index} onClick={() => handleRemoveFromFavorites(index)}>
+                            {favorite.data.name}
+                        </Dropdown.Item>
                     ))}
                 </Dropdown.Menu>
             </Dropdown>

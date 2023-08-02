@@ -67,6 +67,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 						favorites: [...getStore().favorites, { type, data }],
 					});
 				}
+			},
+			removeFavorite: (index) => {
+				const updatedFavorites = [...getStore().favorites];
+				updatedFavorites.splice(index, 1);
+				setStore({
+					...getStore(),
+					favorites: updatedFavorites
+				});
 			}
 
 		}

@@ -5,6 +5,7 @@ import { Context } from '../store/appContext';
 const Planets = () => {
     const { store, actions } = useContext(Context);
 
+    //Onclick
     const handleAddToFavorites = (planet) => {
         actions.addFavorite('planet', planet);
     };

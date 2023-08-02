@@ -6,6 +6,7 @@ import { Context } from '../store/appContext';
 const Vehicles = () => {
     const { store, actions } = useContext(Context);
 
+    //Onclick
     const handleAddToFavorites = (vehicle) => {
         actions.addFavorite('vehicle', vehicle);
     };

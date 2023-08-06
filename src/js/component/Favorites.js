@@ -18,8 +18,9 @@ const Favorites = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     {store.favorites.map((favorite, index) => (
-                        <Dropdown.Item key={index} onClick={() => handleRemoveFromFavorites(index)}>
+                        <Dropdown.Item key={index} >
                             {favorite.data.name}
+                            <FaTrash onClick={() => handleRemoveFromFavorites(index)}></FaTrash>
                         </Dropdown.Item>
                     ))}
                 </Dropdown.Menu>
